@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Trips">
-        <activity android:name=".LugarActivity"></activity>
+        <activity android:name=".LugarActivity"/>
         <activity android:name=".RegistroUsuarioActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
@@ -18,13 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity"/>
     </application>
 
 </manifest>
