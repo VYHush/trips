@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Trips</string>
+    <string name="cadastro">Não possui cadastro? Registre-se</string>
+    <string name="Login">Login</string>
+    <string name="password">senha</string>
+    <string name="email">email</string>
+    <string name="Slogan">LocalDex</string>
+    <string name="Registrar">Registrar</string>
+    <string name="frase_de_cadastro">Vamos começar</string>
+    <string name="nome">nome</string>
+    <string name="senha">senha</string>
+    <string name="bem_vindo">Bem Vindo</string>
 </resources>
