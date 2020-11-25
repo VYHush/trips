@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegistroUsuarioActivity extends AppCompatActivity {
 
+    private EditText NomeNovoUsuarioEditText;
     private EditText loginNovoUsuarioEditText;
     private EditText senhaNovoUsuarioEditText;
     private FirebaseAuth auth;
@@ -19,12 +20,14 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuario);
+        NomeNovoUsuarioEditText = findViewById(R.id.NomeNovoUsuarioEditText);
         loginNovoUsuarioEditText = findViewById(R.id.loginNovoUsuarioEditText);
         senhaNovoUsuarioEditText = findViewById(R.id.senhaNovoUsuarioEditText);
         auth = FirebaseAuth.getInstance();
     }
 
     public void criarNovoUsuario (View view){
+        String Nome = NomeNovoUsuarioEditText.getEditableText().toString();
         String login = loginNovoUsuarioEditText.getEditableText().toString();
         String senha = senhaNovoUsuarioEditText.getEditableText().toString();
         auth.createUserWithEmailAndPassword(login, senha).addOnSuccessListener((result) -> {
