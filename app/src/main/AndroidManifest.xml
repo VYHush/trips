@@ -13,10 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Trips">
+        <activity android:name=".OneBoardingActivity">
 
-        <activity android:name=".LugarActivity" />
-        <activity android:name=".RegistroUsuarioActivity" />
-        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OneBoardingActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg"
+        android:scaleType="centerCrop" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gradient" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/Slogan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="36dp"
+        android:textColor="@android:color/black"
+        android:text="@string/Slogan"
+        android:textAlignment="center"
+        android:fontFamily="cursive"
+        android:textSize="30sp"
+        />
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:text="@string/Login"
+        android:onClick="irParaLogin"
+        android:background="@drawable/btn_login"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/registro_btn"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/registro_btn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:onClick="irParaCadastro"
+        android:text="@string/Registrar"
+        android:background="#fffff0"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
