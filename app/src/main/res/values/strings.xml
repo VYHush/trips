@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Trips</string>
     <string name="cadastro">Não possui cadastro? Registre-se</string>
     <string name="Login">Login</string>
@@ -15,4 +16,5 @@
     <string name="latitude">latitude</string>
     <string name="salvar">Salvar</string>
     <string name="dataCadastro">Data de Cadastro</string>
+
 </resources>
