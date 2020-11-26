@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1027373447061",
+    "firebase_url": "https://tripstecdev.firebaseio.com",
+    "project_id": "tripstecdev",
+    "storage_bucket": "tripstecdev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027373447061:android:a3d1780748377caa22e89c",
+        "android_client_info": {
+          "package_name": "com.example.trips"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1027373447061-uce26fkmvtffjv3g364t3ltf5q4dva7v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE6xAsfVD-hbvoOW6tucMYkwa09qpZ1v0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1027373447061-uce26fkmvtffjv3g364t3ltf5q4dva7v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
