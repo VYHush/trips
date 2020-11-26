@@ -12,38 +12,42 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class LugarActivity extends AppCompatActivity implements LocationListener {
 
-    LocationRequest mLocationRequest;
     Criteria criteria;
     protected LocationManager locationManager;
     String bestProvider;
-    String longitude = "";
-    String latitude = "";
     FusedLocationProviderClient fusedLocationProviderClient;
+    CollectionReference lugarReference = null;
+    EditText nome = findViewById(R.id.nomeLugarEditText);
+    EditText latitude = findViewById(R.id.latitudeEditText);
+    EditText longitude = findViewById(R.id.longitudeEditText);
+    EditText dataCadastro = findViewById(R.id.dataCadastroEditText);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lugar);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-
+        getLocation();
+        Date dataHoraAtual = new Date();
+        String data = new SimpleDateFormat("dd/MM/yyyy").format(dataHoraAtual);
+        dataCadastro.setText(data);
     }
 
-    public void ativar(View view) {
-        if (ActivityCompat.checkSelfPermission(LugarActivity.this,
-                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            getLocation();
-        } else {
-            ActivityCompat.requestPermissions(LugarActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
-        }
-    }
 
     @SuppressLint("MissingPermission")
     private void getLocation() {
@@ -54,7 +58,8 @@ public class LugarActivity extends AppCompatActivity implements LocationListener
         Location location = locationManager.getLastKnownLocation(bestProvider);
         System.out.println(location.getLatitude());
         System.out.println(location.getLongitude());
-        Toast.makeText(this, String.valueOf(location.getLatitude()), Toast.LENGTH_SHORT).show();
+        latitude.setText(String.valueOf(location.getLatitude()));
+        longitude.setText(String.valueOf(location.getLongitude()));
     }
 
     @SuppressLint("MissingPermission")
@@ -62,5 +67,17 @@ public class LugarActivity extends AppCompatActivity implements LocationListener
     public void onLocationChanged(Location location) {
 
 
+    }
+
+    public void cadastrar(View view) {
+        /*if (ActivityCompat.checkSelfPermission(LugarActivity.this,
+                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            getLocation();
+        } else {
+            ActivityCompat.requestPermissions(LugarActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
+        }*/
+        lugarReference = FirebaseFirestore.getInstance().collection("lugares");
+        Lugar l = new Lugar(nome.getText().toString(), latitude.getText().toString(), longitude.getText().toString(), dataCadastro.getText().toString());
+        lugarReference.add(l);
     }
 }
