@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(new Intent(this, RegistroUsuarioActivity.class));
     }
 
-
+    
     public void fazerLogin (View v){
         String login = loginEditText.getEditableText().toString();
         String senha = senhaEditText.getEditableText().toString();

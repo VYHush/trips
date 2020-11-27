@@ -11,25 +11,25 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegistroUsuarioActivity extends AppCompatActivity {
 
-    private EditText NomeNovoUsuarioEditText;
-    private EditText loginNovoUsuarioEditText;
-    private EditText senhaNovoUsuarioEditText;
+    private EditText nomeEditText;
+    private EditText emailEditText;
+    private EditText senhaEditText;
     private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuario);
-        NomeNovoUsuarioEditText = findViewById(R.id.NomeNovoUsuarioEditText);
-        loginNovoUsuarioEditText = findViewById(R.id.loginNovoUsuarioEditText);
-        senhaNovoUsuarioEditText = findViewById(R.id.senhaNovoUsuarioEditText);
+        nomeEditText = findViewById(R.id.emailEditText);
+        emailEditText = findViewById(R.id.emailEditText);
+        senhaEditText = findViewById(R.id.senhaEditText);
         auth = FirebaseAuth.getInstance();
     }
 
     public void criarNovoUsuario (View view){
-        String Nome = NomeNovoUsuarioEditText.getEditableText().toString();
-        String login = loginNovoUsuarioEditText.getEditableText().toString();
-        String senha = senhaNovoUsuarioEditText.getEditableText().toString();
+        String Nome = nomeEditText.getEditableText().toString();
+        String login = emailEditText.getEditableText().toString();
+        String senha = senhaEditText.getEditableText().toString();
         auth.createUserWithEmailAndPassword(login, senha).addOnSuccessListener((result) -> {
             Toast.makeText(this, result.getUser().getEmail(), Toast.LENGTH_SHORT).show();
             finish();
