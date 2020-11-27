@@ -80,7 +80,6 @@
         />
     <EditText
         android:id="@+id/latitudeEditText"
-        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="18dp"
@@ -98,7 +97,6 @@
         />
     <EditText
         android:id="@+id/dataCadastroEditText"
-        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="18dp"

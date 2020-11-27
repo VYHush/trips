@@ -18,4 +18,8 @@ public class OneBoardingActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RegistroUsuarioActivity.class);
         startActivity(intent);
     }
+    public void irParaLogin(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
 }
