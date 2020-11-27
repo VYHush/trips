@@ -2,7 +2,9 @@ package com.example.trips;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -30,4 +32,8 @@ public class MainActivity extends AppCompatActivity {
         lugarReference = FirebaseFirestore.getInstance().collection("lugares");
     }
 
+    public void irParaLugar(View view) {
+        Intent intent = new Intent(this, LugarActivity.class);
+        startActivity(intent);
+    }
 }

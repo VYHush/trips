@@ -2,6 +2,7 @@ package com.example.trips;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -31,7 +32,8 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
         String login = emailEditText.getEditableText().toString();
         String senha = senhaEditText.getEditableText().toString();
         auth.createUserWithEmailAndPassword(login, senha).addOnSuccessListener((result) -> {
-            Toast.makeText(this, result.getUser().getEmail(), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
             finish();
         }).addOnFailureListener((error -> error.printStackTrace()));
     }

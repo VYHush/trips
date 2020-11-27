@@ -32,20 +32,26 @@ public class LugarActivity extends AppCompatActivity implements LocationListener
     String bestProvider;
     FusedLocationProviderClient fusedLocationProviderClient;
     CollectionReference lugarReference = null;
-    EditText nome = findViewById(R.id.nomeLugarEditText);
-    EditText latitude = findViewById(R.id.latitudeEditText);
-    EditText longitude = findViewById(R.id.longitudeEditText);
-    EditText dataCadastro = findViewById(R.id.dataCadastroEditText);
+    private EditText nome;
+    private EditText latitude;
+    private EditText longitude;
+    private EditText dataCadastro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lugar);
+        nome = findViewById(R.id.nomeLugarEditText);
+        latitude = findViewById(R.id.latitudeEditText);
+        longitude = findViewById(R.id.longitudeEditText);
+        dataCadastro = findViewById(R.id.dataCadastroEditText);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         getLocation();
         Date dataHoraAtual = new Date();
         String data = new SimpleDateFormat("dd/MM/yyyy").format(dataHoraAtual);
-        dataCadastro.setText(data);
+        int dia = Integer.parseInt(data.substring(0,2));
+        dia = dia - 1;
+        dataCadastro.setText(dia+ data.substring(2,10));
     }
 
 

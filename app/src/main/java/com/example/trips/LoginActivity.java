@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        loginEditText = findViewById(R.id.loginEditText);
+        loginEditText = findViewById(R.id.emailEditText);
         senhaEditText = findViewById(R.id.senhaEditText);
         auth = FirebaseAuth.getInstance();
     }
@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         String senha = senhaEditText.getEditableText().toString();
         auth.signInWithEmailAndPassword(login, senha).
                 addOnSuccessListener((result) -> {
-                    startActivity(new Intent (this, LugarActivity.class));
+                    startActivity(new Intent (this, MainActivity.class));
                 }).
                 addOnFailureListener((error) -> {
                     error.printStackTrace();
