@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
@@ -62,8 +63,6 @@ public class LugarActivity extends AppCompatActivity implements LocationListener
         bestProvider = String.valueOf(locationManager.getBestProvider(criteria, true));
         locationManager.requestLocationUpdates(bestProvider, 1000, 0, this::onLocationChanged);
         Location location = locationManager.getLastKnownLocation(bestProvider);
-        System.out.println(location.getLatitude());
-        System.out.println(location.getLongitude());
         latitude.setText(String.valueOf(location.getLatitude()));
         longitude.setText(String.valueOf(location.getLongitude()));
     }
@@ -76,14 +75,16 @@ public class LugarActivity extends AppCompatActivity implements LocationListener
     }
 
     public void cadastrar(View view) {
-        /*if (ActivityCompat.checkSelfPermission(LugarActivity.this,
+        if (ActivityCompat.checkSelfPermission(LugarActivity.this,
                 Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            getLocation();
+
         } else {
             ActivityCompat.requestPermissions(LugarActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
-        }*/
+        }
         lugarReference = FirebaseFirestore.getInstance().collection("lugares");
         Lugar l = new Lugar(nome.getText().toString(), latitude.getText().toString(), longitude.getText().toString(), dataCadastro.getText().toString());
         lugarReference.add(l);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
