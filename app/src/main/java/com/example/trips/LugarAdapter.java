@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -50,7 +51,7 @@ public class LugarAdapter extends RecyclerView.Adapter <LugarViewHolder>{ privat
             addresses = geocoder.getFromLocation(Double.parseDouble(l.getLatitude()), Double.parseDouble(l.getLongitude()), 1);
             if(addresses.get(0).getSubThoroughfare() == (null)){
                 holder.enderecoTextview.setText(addresses.get(0).getThoroughfare());
-            }else { 
+            }else {
                 holder.enderecoTextview.setText(addresses.get(0).getThoroughfare() + ", " + addresses.get(0).getSubThoroughfare());
             }
         } catch (IOException e) {
@@ -64,6 +65,7 @@ public class LugarAdapter extends RecyclerView.Adapter <LugarViewHolder>{ privat
                 lugares.remove(holder.getAdapterPosition());
                 notifyItemRemoved(holder.getAdapterPosition());
                 notifyItemRangeChanged(holder.getAdapterPosition(), lugares.size());
+                Toast.makeText(context, "Item removido!", Toast.LENGTH_SHORT).show();
                 return false;
             }
         });

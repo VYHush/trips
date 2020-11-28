@@ -2,9 +2,11 @@ package com.example.trips;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -32,12 +34,14 @@ public class LoginActivity extends AppCompatActivity {
     public void fazerLogin (View v){
         String login = loginEditText.getEditableText().toString();
         String senha = senhaEditText.getEditableText().toString();
+        InputMethodManager imm = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
         auth.signInWithEmailAndPassword(login, senha).
                 addOnSuccessListener((result) -> {
                     startActivity(new Intent (this, MainActivity.class));
                 }).
                 addOnFailureListener((error) -> {
-                    error.printStackTrace();
+                    Toast.makeText(this, "Usuário ou senha inválidos", Toast.LENGTH_LONG).show();
                 });
     }
 

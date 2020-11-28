@@ -37,6 +37,7 @@ public class LugarActivity extends AppCompatActivity implements LocationListener
     private EditText latitude;
     private EditText longitude;
     private EditText dataCadastro;
+    private Date dataHoraAtual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +49,9 @@ public class LugarActivity extends AppCompatActivity implements LocationListener
         dataCadastro = findViewById(R.id.dataCadastroEditText);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         getLocation();
-        Date dataHoraAtual = new Date();
+        dataHoraAtual = new Date();
         String data = new SimpleDateFormat("dd/MM/yyyy").format(dataHoraAtual);
-        int dia = Integer.parseInt(data.substring(0,2));
-        dia = dia - 1;
-        dataCadastro.setText(dia+ data.substring(2,10));
+        dataCadastro.setText(data);
     }
 
 
@@ -82,7 +81,7 @@ public class LugarActivity extends AppCompatActivity implements LocationListener
             ActivityCompat.requestPermissions(LugarActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
         }
         lugarReference = FirebaseFirestore.getInstance().collection("lugares");
-        Lugar l = new Lugar(nome.getText().toString(), latitude.getText().toString(), longitude.getText().toString(), dataCadastro.getText().toString());
+        Lugar l = new Lugar(nome.getText().toString(), latitude.getText().toString(), longitude.getText().toString(), dataCadastro.getText().toString(), new Date());
         lugarReference.add(l);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
