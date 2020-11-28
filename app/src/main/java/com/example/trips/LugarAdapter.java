@@ -50,7 +50,7 @@ public class LugarAdapter extends RecyclerView.Adapter <LugarViewHolder>{ privat
             addresses = geocoder.getFromLocation(Double.parseDouble(l.getLatitude()), Double.parseDouble(l.getLongitude()), 1);
             if(addresses.get(0).getSubThoroughfare() == (null)){
                 holder.enderecoTextview.setText(addresses.get(0).getThoroughfare());
-            }else {
+            }else { 
                 holder.enderecoTextview.setText(addresses.get(0).getThoroughfare() + ", " + addresses.get(0).getSubThoroughfare());
             }
         } catch (IOException e) {

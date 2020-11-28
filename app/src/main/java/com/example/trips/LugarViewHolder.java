@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class LugarViewHolder extends RecyclerView.ViewHolder{
 
-    TextView nomeTextView;
-    TextView dataTextview;
-    TextView enderecoTextview;
+    public TextView nomeTextView;
+    public TextView dataTextview;
+    public TextView enderecoTextview;
     LugarViewHolder(View v){
         super (v);
         this.nomeTextView = v.findViewById(R.id.nomeTextView);
