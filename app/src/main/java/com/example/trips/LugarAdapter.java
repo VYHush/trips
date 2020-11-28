@@ -1,8 +1,10 @@
 package com.example.trips;
 
 import android.content.Context;
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +60,19 @@ public class LugarAdapter extends RecyclerView.Adapter <LugarViewHolder>{ privat
                 notifyItemRemoved(holder.getAdapterPosition());
                 notifyItemRangeChanged(holder.getAdapterPosition(), lugares.size());
                 return false;
+            }
+        });
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Lugar lugar = lugares.get(holder.getAdapterPosition());
+                System.out.println(lugar.getLatitude());
+                Intent intent = new Intent(v.getContext(), MapsActivity.class);
+                intent.putExtra("latitude", lugar.getLatitude());
+                intent.putExtra("longitude", lugar.getLongitude());
+                intent.putExtra("nome", lugar.getNome());
+                context.startActivity(intent);
             }
         });
     }
