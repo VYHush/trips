@@ -5,6 +5,15 @@ public class Lugar {
     private String latitude;
     private String longitude;
     private String dataCadastro;
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -16,6 +25,7 @@ public class Lugar {
         this.longitude = longitude;
         this.dataCadastro = dataCadastro;
     }
+    public Lugar(){}
 
     public void setNome(String nome) {
         this.nome = nome;
