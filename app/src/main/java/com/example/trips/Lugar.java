@@ -1,11 +1,14 @@
 package com.example.trips;
 
-public class Lugar {
+import java.util.Date;
+
+public class Lugar implements Comparable<Lugar>{
     private String nome;
     private String latitude;
     private String longitude;
     private String dataCadastro;
     private String id;
+    private Date dataAtual;
 
     public String getId() {
         return id;
@@ -19,11 +22,12 @@ public class Lugar {
         return nome;
     }
 
-    public Lugar(String nome, String latitude, String longitude, String dataCadastro) {
+    public Lugar(String nome, String latitude, String longitude, String dataCadastro, Date dataAtual) {
         this.nome = nome;
         this.latitude = latitude;
         this.longitude = longitude;
         this.dataCadastro = dataCadastro;
+        this.dataAtual = dataAtual;
     }
     public Lugar(){}
 
@@ -53,5 +57,18 @@ public class Lugar {
 
     public void setDataCadastro(String dataCadastro) {
         this.dataCadastro = dataCadastro;
+    }
+
+    public Date getDataAtual() {
+        return dataAtual;
+    }
+
+    public void setDataAtual(Date dataAtual) {
+        this.dataAtual = dataAtual;
+    }
+
+    @Override
+    public int compareTo(Lugar l) {
+        return this.dataAtual.compareTo(l.dataAtual);
     }
 }

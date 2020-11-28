@@ -23,6 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     lugar.setId(doc.getId());
                     lugares.add(lugar);
                 }
+                Collections.sort(lugares);
                 adapter.notifyDataSetChanged();
             }
         });

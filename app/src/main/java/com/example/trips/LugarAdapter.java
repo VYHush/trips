@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -64,6 +65,7 @@ public class LugarAdapter extends RecyclerView.Adapter <LugarViewHolder>{ privat
                 lugares.remove(holder.getAdapterPosition());
                 notifyItemRemoved(holder.getAdapterPosition());
                 notifyItemRangeChanged(holder.getAdapterPosition(), lugares.size());
+                Toast.makeText(context, "Item removido!", Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
