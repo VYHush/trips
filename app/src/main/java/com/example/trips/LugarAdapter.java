@@ -44,10 +44,15 @@ public class LugarAdapter extends RecyclerView.Adapter <LugarViewHolder>{ privat
         holder.dataTextview.setText(l.getDataCadastro());
         holder.nomeTextView.setText(l.getNome());
 
+
         geocoder = new Geocoder(this.context, Locale.getDefault());
         try {
             addresses = geocoder.getFromLocation(Double.parseDouble(l.getLatitude()), Double.parseDouble(l.getLongitude()), 1);
-            System.out.println(addresses.get(0).getThoroughfare() + addresses.get(0).getSubThoroughfare());
+            if(addresses.get(0).getSubThoroughfare() == (null)){
+                holder.enderecoTextview.setText(addresses.get(0).getThoroughfare());
+            }else { 
+                holder.enderecoTextview.setText(addresses.get(0).getThoroughfare() + ", " + addresses.get(0).getSubThoroughfare());
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
