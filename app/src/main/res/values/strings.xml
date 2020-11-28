@@ -10,12 +10,14 @@
     <string name="frase_de_cadastro">Vamos começar</string>
     <string name="nome">nome</string>
     <string name="senha">senha</string>
-    <string name="bem_vindo">Bem Vindo</string>
+    <string name="bem_vindo">Bem Vindo !</string>
     <string name="Adicione_um_lugar">Adicione um lugar</string>
     <string name="longitude">longitude</string>
     <string name="latitude">latitude</string>
     <string name="salvar">Salvar</string>
     <string name="dataCadastro">Data de Cadastro</string>
     <string name="title_activity_maps">Map</string>
+    <string name="voltar">Voltar</string>
+    <string name="todo">TODO</string>
 
 </resources>

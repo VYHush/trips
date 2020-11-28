@@ -40,4 +40,9 @@ public class LoginActivity extends AppCompatActivity {
                     error.printStackTrace();
                 });
     }
+
+    public void irParaOneBoarding(View view) {
+        Intent intent = new Intent(this, OneBoardingActivity.class);
+        startActivity(intent);
+    }
 }
