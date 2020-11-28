@@ -87,4 +87,9 @@ public class LugarActivity extends AppCompatActivity implements LocationListener
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+    public void irParaMain(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }

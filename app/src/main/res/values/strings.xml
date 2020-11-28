@@ -17,5 +17,6 @@
     <string name="salvar">Salvar</string>
     <string name="dataCadastro">Data de Cadastro</string>
     <string name="title_activity_maps">Map</string>
+    <string name="voltar">Voltar</string>
 
 </resources>
