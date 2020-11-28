@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
@@ -85,5 +86,10 @@ public class LugarActivity extends AppCompatActivity implements LocationListener
         lugarReference = FirebaseFirestore.getInstance().collection("lugares");
         Lugar l = new Lugar(nome.getText().toString(), latitude.getText().toString(), longitude.getText().toString(), dataCadastro.getText().toString());
         lugarReference.add(l);
+    }
+
+    public void irParaMain(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

@@ -37,4 +37,9 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
             finish();
         }).addOnFailureListener((error -> error.printStackTrace()));
     }
+
+    public void irParaOneBoarding(View view) {
+        Intent intent = new Intent(this, OneBoardingActivity.class);
+        startActivity(intent);
+    }
 }
