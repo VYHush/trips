@@ -47,6 +47,18 @@
             android:layout_alignStart="@+id/nomeTextView"
             />
 
+        <TextView
+            android:id="@+id/enderecoTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            tools:text="Endereco"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/dataTextView"
+            android:layout_marginStart="16dp"
+            android:layout_alignStart="@+id/nomeTextView"
+            />
+
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
