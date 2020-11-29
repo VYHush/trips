@@ -3,15 +3,15 @@
     <string name="app_name">Trips</string>
     <string name="cadastro">Não possui cadastro? Registre-se</string>
     <string name="Login">Login</string>
-    <string name="password">senha</string>
-    <string name="email">email</string>
+    <string name="password">Senha</string>
+    <string name="email">Email</string>
     <string name="Slogan">LocalDex</string>
     <string name="Registrar">Registrar</string>
-    <string name="frase_de_cadastro">Vamos começar</string>
-    <string name="nome">nome</string>
-    <string name="senha">senha</string>
+    <string name="frase_de_cadastro">Vamos Começar</string>
+    <string name="nome">Nome</string>
+    <string name="senha">Senha</string>
     <string name="bem_vindo">Bem Vindo !</string>
-    <string name="Adicione_um_lugar">Adicione um lugar</string>
+    <string name="Adicione_um_lugar">Adicione Um Lugar</string>
     <string name="longitude">longitude</string>
     <string name="latitude">latitude</string>
     <string name="salvar">Salvar</string>
@@ -19,5 +19,6 @@
     <string name="title_activity_maps">Map</string>
     <string name="voltar">Voltar</string>
     <string name="todo">TODO</string>
+    <string name="seus_lugares">Lugares Visitados</string>
 
 </resources>

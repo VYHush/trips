@@ -12,10 +12,23 @@
         android:layout_height="match_parent"
         android:background="@android:color/white"/>
 
+    <TextView
+        android:id="@+id/seusLugares"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_marginTop="26dp"
+        android:text="@string/seus_lugares"
+        android:fontFamily="cursive"
+        android:textColor="@android:color/black"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleview_lugares"
         android:layout_width="match_parent"
+        android:layout_below="@id/seusLugares"
         android:layout_height="match_parent"
+        android:layout_marginTop="36dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
     />
 
